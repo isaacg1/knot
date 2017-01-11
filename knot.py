@@ -1,3 +1,5 @@
+from ast import literal_eval
+
 dirs = {
     ' ': set(),
     '│': {0, 2},
@@ -55,7 +57,7 @@ def all_grids(side):
                     new_grid = working_grid[:]
                     new_grid[row] = working_grid[row] + [char]
                     next_grids.append(new_grid)
-            print(row, col, len(next_grids))
+            #print(row, col, len(next_grids))
             grids = next_grids
     return grids
 
@@ -139,4 +141,4 @@ def find(goal_note):
         side += 1
 
 
-print(pretty(find((2, 3, 0, 1))))
+print(pretty(find(literal_eval(input()))))
